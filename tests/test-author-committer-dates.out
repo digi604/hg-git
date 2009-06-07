@@ -1,0 +1,44 @@
+% original git commits
+commit 77c8f5d4c24b6d35720def7bbb3f7ee0cac852b0
+author test <test@example.org> 1234576890 -0230
+committer test <test@example.org> 1234558890 +0230
+
+commit 8724bdd87c3b3d9ad30ff805e2a5742423f43294
+author Git Author Name <author@example.org> 1234567890 +0000
+committer Git Committer Name <committer@example.org> 1234567890 +0000
+
+importing Git objects into Hg
+at: 0/2
+creating bookmarks failed, do you have bookmarks enabled?
+changeset:   1:602b6a64f6b4
+tag:         tip
+user:        test <test@example.org>
+date:        Fri Feb 13 23:31:30 2009 -0230
+summary:     dua
+
+changeset:   0:351f5b52d56b
+user:        Git Author Name <author@example.org>
+date:        Fri Feb 13 23:31:30 2009 +0000
+summary:     unua
+
+% make hg commits
+0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+clearing out the git cache data
+importing Hg objects into Git
+at: 0/3
+converting revision 0
+converting revision 1
+converting revision 2
+% exported git commits
+commit 1eb4ae792ecc6bd26ae21584da95f629799df18e
+author it is not name and email. <none@none> 1234576890 -0230
+committer it is not name and email. <none@none> 1234576890 -0230
+
+commit 77c8f5d4c24b6d35720def7bbb3f7ee0cac852b0
+author test <test@example.org> 1234576890 -0230
+committer test <test@example.org> 1234558890 +0230
+
+commit 8724bdd87c3b3d9ad30ff805e2a5742423f43294
+author Git Author Name <author@example.org> 1234567890 +0000
+committer Git Committer Name <committer@example.org> 1234567890 +0000
+
