@@ -1,0 +1,12 @@
+#!/bin/sh
+
+"$TESTDIR/hghave" git || exit 80
+
+hg init
+git init -q
+
+git fast-import --quiet < "$TESTDIR/git-sample-repo"
+
+echo % import without bookmarks
+hg gimport
+hg log

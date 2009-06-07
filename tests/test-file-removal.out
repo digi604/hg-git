@@ -1,42 +1,35 @@
-Initialized empty Git repository in gitrepo/.git/
-
 rm 'alpha'
 rm 'foo/bar'
 % final manifest in git is just beta
 beta
-fetching from : origin
-exporting git objects
-Counting objects: 14, done.
-Compressing objects:  12% (1/8)   Compressing objects:  25% (2/8)   Compressing objects:  37% (3/8)   Compressing objects:  50% (4/8)   Compressing objects:  62% (5/8)   Compressing objects:  75% (6/8)   Compressing objects:  87% (7/8)   Compressing objects: 100% (8/8)   Compressing objects: 100% (8/8), done.
-Total 14 (delta 1), reused 0 (delta 0)
 importing Git objects into Hg
-1 files updated, 0 files merged, 0 files removed, 0 files unresolved
-@  changeset:   4:ea41a3f0ed10
-|  tag:         origin/master
-|  tag:         tip
-|  user:        test <test@example.org>
-|  date:        Mon Jan 01 00:00:14 2007 +0000
-|  summary:     remove foo/bar
-|
-o  changeset:   3:c84537f94bcc
-|  user:        test <test@example.org>
-|  date:        Mon Jan 01 00:00:13 2007 +0000
-|  summary:     remove alpha
-|
-o  changeset:   2:e25450e1354f
-|  user:        test <test@example.org>
-|  date:        Mon Jan 01 00:00:12 2007 +0000
-|  summary:     add foo
-|
-o  changeset:   1:7bcd915dc873
-|  user:        test <test@example.org>
-|  date:        Mon Jan 01 00:00:11 2007 +0000
-|  summary:     add beta
-|
-o  changeset:   0:3442585be8a6
-   user:        test <test@example.org>
-   date:        Mon Jan 01 00:00:10 2007 +0000
-   summary:     add alpha
+at: 0/5
+creating bookmarks failed, do you have bookmarks enabled?
+changeset:   4:26a36502e0eb
+tag:         tip
+user:        test <test@example.org>
+date:        Fri Feb 13 23:31:30 2009 +0000
+summary:     remove foo/bar
+
+changeset:   3:2649f8f87bc1
+user:        test <test@example.org>
+date:        Fri Feb 13 23:31:30 2009 +0000
+summary:     remove alpha
+
+changeset:   2:16db36e9a614
+user:        test <test@example.org>
+date:        Fri Feb 13 23:31:30 2009 +0000
+summary:     add foo
+
+changeset:   1:c25ea3d53ce1
+user:        test <test@example.org>
+date:        Fri Feb 13 23:31:30 2009 +0000
+summary:     add beta
+
+changeset:   0:c50ac8b9444c
+user:        test <test@example.org>
+date:        Fri Feb 13 23:31:30 2009 +0000
+summary:     add alpha
 
 
 % make sure alpha is not in this manifest

@@ -1,0 +1,15 @@
+% import without bookmarks
+importing Git objects into Hg
+at: 0/2
+creating bookmarks failed, do you have bookmarks enabled?
+changeset:   1:c25ea3d53ce1
+tag:         tip
+user:        test <test@example.org>
+date:        Fri Feb 13 23:31:30 2009 +0000
+summary:     add beta
+
+changeset:   0:c50ac8b9444c
+user:        test <test@example.org>
+date:        Fri Feb 13 23:31:30 2009 +0000
+summary:     add alpha
+
