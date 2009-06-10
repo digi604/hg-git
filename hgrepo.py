@@ -95,7 +95,7 @@ class hgrepo(localrepo.localrepository):
             #while lines and not lines[0]:
             #    del lines[0]
             #text = '\n'.join(lines)
-            if text[-1] == "\n":
+            if text and text[-1] == "\n":
                 text = text[:-1]
             
             file_list = []
