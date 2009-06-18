@@ -172,6 +172,10 @@ class GitHandler(object):
 
     def export_hg_tags(self):
         for tag, sha in self.repo.tags().iteritems():
+            # (currently) we don't care about global tags.
+            # and bookmarks of course.
+            if self.repo.tagtype(tag) != 'local':
+                continue
             if tag[-3:] == '^{}':
                 continue
             if tag == 'tip':

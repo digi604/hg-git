@@ -1,14 +1,12 @@
-Initialized empty Git repository in gitrepo/.git/
-
-[master (root-commit) 6782568] empty
-fetching from : origin
-exporting git objects
-Counting objects: 2, done.
-Total 2 (delta 0), reused 0 (delta 0)
+% original HEAD
+1f2153667658aafaa7e7700dddb6a0899c3f5a40
 importing Git objects into Hg
-0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+at: 0/1
+creating bookmarks failed, do you have bookmarks enabled?
 files: 
 clearing out the git cache data
-exporting git objects
+importing Hg objects into Git
 at: 0/1
 converting revision 0
+% exported HEAD
+1f2153667658aafaa7e7700dddb6a0899c3f5a40

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+"$TESTDIR/hghave" git || exit 80
+
+echo "[extensions]" >> $HGRCPATH
+echo "bookmarks = " >> $HGRCPATH
+
+hg init
+git init -q
+
+git fast-import --quiet < "$TESTDIR/git-sample-repo"
+
+hg init
+
+echo % import with bookmarks
+hg gimport
+hg log
+
+echo % we should have some bookmarks
+hg book

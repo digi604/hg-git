@@ -1,0 +1,40 @@
+#!/bin/sh
+
+"$TESTDIR/hghave" git || exit 80
+
+hg init
+git init -q
+
+# different names, same dates
+GIT_AUTHOR_NAME='Git Author Name'; export GIT_AUTHOR_NAME
+GIT_AUTHOR_EMAIL='author@example.org'; export GIT_AUTHOR_EMAIL
+GIT_COMMITTER_NAME="Git Committer Name"; export GIT_COMMITTER_NAME
+GIT_COMMITTER_EMAIL="committer@example.org"; export GIT_COMMITTER_EMAIL
+git commit --allow-empty -qm unua
+
+# different dates, same names
+GIT_AUTHOR_NAME='test'; export GIT_AUTHOR_NAME
+GIT_AUTHOR_EMAIL='test@example.org'; export GIT_AUTHOR_EMAIL
+GIT_COMMITTER_NAME="test"; export GIT_COMMITTER_NAME
+GIT_COMMITTER_EMAIL="test@example.org"; export GIT_COMMITTER_EMAIL
+GIT_AUTHOR_DATE="2009-02-13 23:31:30 -0230"; export GIT_AUTHOR_DATE
+GIT_COMMITTER_DATE="2009-02-13 23:31:30 +0230"; export GIT_COMMITTER_DATE
+git commit --allow-empty -qm dua
+
+echo % original git commits
+git rev-list --date=raw --pretty=format:'author %an <%ae> %ad%ncommitter %cn <%ce> %cd%n' HEAD
+
+hg gimport
+hg log
+
+echo % make hg commits
+hg up
+echo x > file
+hg add file
+hg commit -m 'tria' -u "it is not name and email." -d "2009-02-13 23:31:30 -0230"
+
+hg gclear
+hg gexport
+
+echo % exported git commits
+git rev-list --date=raw --pretty=format:'author %an <%ae> %ad%ncommitter %cn <%ce> %cd%n' HEAD

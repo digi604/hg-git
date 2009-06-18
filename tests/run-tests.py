@@ -365,6 +365,11 @@ def runone(options, test, skips, fails):
     hgrc.write('commit = -d "0 0"\n')
     hgrc.write('debugrawcommit = -d "0 0"\n')
     hgrc.write('tag = -d "0 0"\n')
+    hgrc.write('[git]\n')
+    hgrc.write('intree = True\n')
+    hgrc.write('bookbranch = master\n')
+    hgrc.write('[extensions]\n')
+    hgrc.write('hg-git = %s\n' % os.path.join(TESTDIR, '..'))
     hgrc.close()
 
     err = os.path.join(TESTDIR, test+".err")
@@ -672,6 +677,10 @@ def main():
     os.environ["HGPORT"] = str(options.port)
     os.environ["HGPORT1"] = str(options.port + 1)
     os.environ["HGPORT2"] = str(options.port + 2)
+
+    os.environ["GIT_AUTHOR_NAME"] = os.environ["GIT_COMMITTER_NAME"] = "test"
+    os.environ["GIT_AUTHOR_EMAIL"] = os.environ["GIT_COMMITTER_EMAIL"] = "test@example.org"
+    os.environ["GIT_AUTHOR_DATE"] = os.environ["GIT_COMMITTER_DATE"] = "2009-02-13 23:31:30 +0000"
 
     if options.with_hg:
         INST = options.with_hg
